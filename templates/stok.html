@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Laporan Stok</title>
+</head>
+
+<body>
+
+    <h1>Laporan Stok Barang</h1>
+
+    <a href="/">Kembali ke Menu</a>
+
+    <hr>
+
+    <table border="1">
+
+        <tr>
+            <th>ID Product</th>
+            <th>Product</th>
+            <th>Masuk Dus</th>
+            <th>Masuk Pcs</th>
+            <th>Keluar Dus</th>
+            <th>Keluar Pcs</th>
+            <th>Stok Dus</th>
+            <th>Stok Pcs</th>
+        </tr>
+
+        {% for row in data %}
+
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ row[5] }}</td>
+            <td>{{ row[2] - row[4] }}</td>
+            <td>{{ row[3] - row[5] }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>

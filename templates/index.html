@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistem Persediaan Barang</title>
+</head>
+
+<body>
+
+    <h1>Sistem Persediaan Barang</h1>
+
+    <hr>
+
+    <h2>Menu</h2>
+
+    <a href="/">Dashboard</a> |
+    <a href="/supplier">Supplier</a> |
+    <a href="/customer">Customer</a> |
+    <a href="/product">Product</a> |
+    <a href="/warehouse">Warehouse</a> |
+    <a href="/penerimaan">Penerimaan Barang</a> |
+    <a href="/pengeluaran">Pengeluaran Barang</a> |
+    <a href="/stok">Laporan Stok</a>
+
+    <hr>
+
+
+    <!-- ========================= -->
+    <!-- BARANG MASUK -->
+    <!-- ========================= -->
+
+    <h2>Input Barang Masuk</h2>
+
+    <form action="/barang-masuk" method="POST">
+
+        <p>
+            No Transaksi:
+            <input type="text" name="no" required>
+        </p>
+
+        <p>
+            Warehouse:
+            <select name="warehouse" required>
+
+                {% for row in warehouse %}
+                    <option value="{{ row[0] }}">
+                        {{ row[1] }}
+                    </option>
+                {% endfor %}
+
+            </select>
+        </p>
+
+        <p>
+            Tanggal:
+            <input type="date" name="tanggal" required>
+        </p>
+
+        <p>
+            Supplier:
+            <select name="supplier" required>
+
+                {% for row in supplier %}
+                    <option value="{{ row[0] }}">
+                        {{ row[1] }}
+                    </option>
+                {% endfor %}
+
+            </select>
+        </p>
+
+        <p>
+            Product:
+            <select name="product" required>
+
+                {% for row in product %}
+                    <option value="{{ row[0] }}">
+                        {{ row[1] }}
+                    </option>
+                {% endfor %}
+
+            </select>
+        </p>
+
+        <p>
+            Qty Dus:
+            <input type="number" name="qty_dus" value="0">
+        </p>
+
+        <p>
+            Qty Pcs:
+            <input type="number" name="qty_pcs" value="0">
+        </p>
+
+        <p>
+            Catatan:
+            <input type="text" name="catatan">
+        </p>
+
+        <button type="submit">
+            Simpan Barang Masuk
+        </button>
+
+    </form>
+
+
+    <hr>
+
+
+    <!-- ========================= -->
+    <!-- BARANG KELUAR -->
+    <!-- ========================= -->
+
+    <h2>Input Barang Keluar</h2>
+
+    <form action="/barang-keluar" method="POST">
+
+        <p>
+            No Transaksi:
+            <input type="text" name="no" required>
+        </p>
+
+        <p>
+            Warehouse:
+            <select name="warehouse" required>
+
+                {% for row in warehouse %}
+                    <option value="{{ row[0] }}">
+                        {{ row[1] }}
+                    </option>
+                {% endfor %}
+
+            </select>
+        </p>
+
+        <p>
+            Tanggal:
+            <input type="date" name="tanggal" required>
+        </p>
+
+        <p>
+           <p>
+    Supplier:
+    <select name="supplier" required>
+        {% for row in supplier %}
+            <option value="{{ row[0] }}">
+                {{ row[1] }}
+            </option>
+        {% endfor %}
+    </select>
+</p>
+
+        <p>
+            Product:
+            <select name="product" required>
+
+                {% for row in product %}
+                    <option value="{{ row[0] }}">
+                        {{ row[1] }}
+                    </option>
+                {% endfor %}
+
+            </select>
+        </p>
+
+        <p>
+            Qty Dus:
+            <input type="number" name="qty_dus" value="0">
+        </p>
+
+        <p>
+            Qty Pcs:
+            <input type="number" name="qty_pcs" value="0">
+        </p>
+
+        <p>
+            Catatan:
+            <input type="text" name="catatan">
+        </p>
+
+        <button type="submit">
+            Simpan Barang Keluar
+        </button>
+
+    </form>
+
+</body>
+</html>
