@@ -5,9 +5,9 @@ from connect import get_connection
 app = Flask(__name__)
 
 
-# =========================
+
 # HALAMAN UTAMA
-# =========================
+
 
 @app.route("/")
 def index():
@@ -51,9 +51,9 @@ def index():
     )
 
 
-# =========================
+
 # SUPPLIER
-# =========================
+
 
 @app.route("/supplier")
 def supplier():
@@ -74,9 +74,9 @@ def supplier():
     return render_template("supplier.html", data=data)
 
 
-# =========================
+
 # CUSTOMER
-# =========================
+
 
 @app.route("/customer")
 def customer():
@@ -97,9 +97,9 @@ def customer():
     return render_template("customer.html", data=data)
 
 
-# =========================
+
 # PRODUCT
-# =========================
+
 
 @app.route("/product")
 def product():
@@ -120,9 +120,8 @@ def product():
     return render_template("product.html", data=data)
 
 
-# =========================
+
 # WAREHOUSE
-# =========================
 
 @app.route("/warehouse")
 def warehouse():
@@ -143,9 +142,8 @@ def warehouse():
     return render_template("warehouse.html", data=data)
 
 
-# =========================
 # PENERIMAAN BARANG
-# =========================
+
 
 @app.route("/penerimaan")
 def penerimaan():
@@ -177,9 +175,9 @@ def penerimaan():
     return render_template("penerimaan.html", data=data)
 
 
-# =========================
+
 # PENGELUARAN BARANG
-# =========================
+
 
 @app.route("/pengeluaran")
 def pengeluaran():
@@ -211,9 +209,9 @@ def pengeluaran():
     return render_template("pengeluaran.html", data=data)
 
 
-# =========================
+
 # LAPORAN STOK
-# =========================
+
 
 @app.route("/stok")
 def stok():
@@ -251,9 +249,9 @@ def stok():
     return render_template("stok.html", data=data)
 
 
-# =========================
+
 # BARANG MASUK
-# =========================
+
 
 @app.route("/barang-masuk", methods=["POST"])
 def barang_masuk():
@@ -303,9 +301,8 @@ def barang_masuk():
     return redirect("/")
 
 
-# =========================
+
 # BARANG KELUAR
-# =========================
 
 @app.route("/barang-keluar", methods=["POST"])
 def barang_keluar():
